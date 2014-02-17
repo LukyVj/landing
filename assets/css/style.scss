@@ -1,0 +1,233 @@
+$c-1: #ecf0f1;
+$c-2: #2ecc71;
+
+@mixin full {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Clearfix */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+body,html {
+    @include full;
+    font-family: "Varela Round",sans-serif;
+    font-size: 1.2em;
+    background: $c-1;
+}
+
+//Layout
+
+.header {
+    height: 16em;
+    width: 100%;
+    float: left;
+    background: $c-2;
+    color: $c-1;
+    text-align: center;
+    color: #fff;
+    h1 {
+        line-height: 2;
+    }
+    h3 {
+        line-height: 0;
+        margin-top: -1em;
+        display: block;
+    }
+}
+
+.content {
+    text-align: center;
+    padding-top: 2em;
+    width: 100%;
+    float: left;
+    border-top: 0.05em solid white;
+    box-shadow: 0 -0.05em 0 rgba(black, 0.1);
+    height: 15em;
+    .button {
+        text-align: center;
+        top: 8em;
+    }
+}
+
+form {
+    margin-top: 0em;
+    float: left;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+//Buttons
+
+.button,input[type="email"] {
+    text-shadow: 0 0.08em 0 rgba(black, 0.1);
+    margin: -3em auto;
+    display: block;
+    position: relative;
+    width: 8em;
+    padding: 0.6em 1.2em;
+    border: 0.1em solid;
+    border-radius: 45px;
+    color: inherit;
+    text-decoration: none;
+    -webkit-box-shadow: 0 0.08em 0 rgba(black, 0.1);
+    border-color: $c-2;
+    color: $c-2;
+    appearance: none;
+    background: $c-1;
+    &:hover {
+        background: $c-2;
+        color: $c-1;
+    }
+}
+
+input[type="email"] {
+    width: 20em;
+    outline: none;
+    margin-top: 2em;
+    top: 3em;
+    background: $c-2;
+    border-radius: 2px;
+    color: #fff;
+    box-shadow: 0.2em 0.2em 0 $c-1, 0.4em 0.4em 0 $c-2;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+}
+
+::-moz-input-placeholder {
+    color: #fff;
+}
+
+::-o-input-placeholder {
+    color: #fff;
+}
+
+::input-placeholder {
+    color: #fff;
+}
+
+//macintosh
+.mac {
+    $width: 340px;
+    box-sizing: border-box;
+    width: $width;
+    height: $width / 16 * 9;
+    background: #E8EBF0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10em auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    float: left;
+    border: 1px solid rgba(black, 0.2);
+    .viewport {
+        background: #27ae60;
+        height: 100%;
+        position: relative;
+    }
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 7px;
+        left: 49%;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #95A5A6;
+    }
+    .bottom {
+        position: absolute;
+        background: #F8F8F8;
+        width: 125%;
+        height: 14px;
+        bottom: 0;
+        left: -12.5%;
+        border-radius: 0 0 30px 30px;
+        border: 1px solid rgba(black, 0.1);
+        box-shadow: 0 0.8em 1.8em rgba(black, 0.2);
+        bottom: -.1em;
+        &:after {
+            display: block;
+            content: "";
+            width: 92px;
+            height: 7px;
+            background: #C3C7C7;
+            margin: 0 auto;
+            border-radius: 0px 0px 10px 10px;
+        }
+    }
+}
+
+//CSS Heart technic from  from http://codepen.io/LukyVj/pen/dobjv
+.heart {
+    background: $c-1;
+    width: 2em;
+    height: 2em;
+    border-radius: 500% 500% 500% 0%;
+    margin: 1em auto;
+    -webkit-transform: rotate(-45deg);
+    float: left;
+    position: absolute;
+    left: -1.5em;
+    right: 0;
+    top: .75em;
+    -webkit-animation: pulse 2s ease infinite;
+}
+
+.heart:before {
+    content: '';
+    display: block;
+    background: $c-1;
+    width: 2em;
+    height: 2em;
+    border-radius: 500% 500% 500% 0%;
+    margin: 1em;
+    position: absolute;
+    -webkit-transform: rotate(0deg);
+}
+
+.heart:after {
+    content: '';
+    display: block;
+    background: $c-1;
+    z-index: -1;
+    width: 2em;
+    height: 2em;
+    border-radius: 500% 500% 500% 0%;
+    margin-left: 1em;
+    margin-top: 2em;
+    position: absolute;
+    -webkit-transform: rotate(0deg) translateY(-1em) translateX(-1em);
+}
+
+@-webkit-keyframes pulse {
+    66% {
+        -webkit-transform: rotate(-45deg) scale(1.3) translateY(-0.2em) translateX(-0.2em);
+    }
+}
